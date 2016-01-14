@@ -1,0 +1,80 @@
+body{
+    background:white;
+    color:black;
+    font-size:16px;
+    font-family:arial;
+    margin: 0 auto;
+    padding:1em 5em;
+    width:99%;
+}
+/*
+GENERALES
+ */
+.inten_oculto{
+    display: none;
+}
+/*
+IMAGE DEL MENU
+ */
+.navbar-header{    
+    margin: 1em 0;
+    width:25%;
+
+}
+.navbar-brand{    
+    padding-top: 0;    
+}
+.navbar-brand img{        
+    width:100%!important;    
+}
+/*
+PANEL
+ */
+#contenedor_panel{
+    margin: 0;
+    padding: 0;
+}
+.paneles{
+    padding-bottom: 1em;
+}
+.panel_category{
+    background: #f8f8f8; 
+    border: 1px solid #e7e7e7;
+    border-radius: 0.3em;
+    margin: 0;
+    padding: 1em 0 0 0;
+}
+#contenedor_panel div:first-child{
+    padding-left: 0em!important;
+    padding-right: 1em!important;
+}
+#contenedor_panel div:last-child{
+    padding-left: 1em!important;
+    padding-right: 0!important;
+}
+.panel_text{
+    margin: 2em 0 1em 0;
+}
+.panel_text small{
+    color:red;
+}
+.image-panel{
+    background: #ffcc00;
+    padding: 1em;
+}
+/*
+PIE DE PAGINA
+ */
+.panel-footer{
+    background: #4d4d4d;
+    border: 1px solid #e7e7e7;
+    border-radius: 0.3em;
+}
+#pie_principal{   
+    color:white; 
+    margin: 1em 0 0 0;
+    padding:0.5em;
+    text-align: center;
+    width: auto;
+
+}
