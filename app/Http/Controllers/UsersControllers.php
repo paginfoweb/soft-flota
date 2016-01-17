@@ -22,10 +22,19 @@ class UsersControllers extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-       $users = User::orderBy('id','DESC')->paginate(10);
-       return view('admin.users.index')-> with('users',$users); //paso de variables
+    public function index(Request $request)
+    {   
+        $users = User::SearchUser($request -> name)->orderBy('id','DESC')->paginate(10);
+        $view = view('admin.users.index')-> with('users',$users); 
+
+        /*
+        *   Validamos si la consulta es por ajax para saber que datos mostramos
+         */
+        if($request -> ajax()){
+             return view('admin.users.search_user')-> with('users',$users); 
+        }else{
+           return $view;
+        }
     }
 
     /**

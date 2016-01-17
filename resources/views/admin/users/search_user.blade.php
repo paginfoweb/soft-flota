@@ -1,30 +1,4 @@
-@extends('admin.template.main')
-@section('title')
-    Usuarios
-@endsection
-@section('content')
-    @if(count($errors) > 0)
-        <div class="alert alert-danger" role="alert">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>
-                        {{ $error }}
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    
-    <a href="{{route('admin.users.create')}}" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Crear usuario </a>
-    {!! Form::open(['route'=>'admin.users.index','method'=>'GET','class'=>'navbar-form navbar-right','id'=>'form_name_search']) !!}
-        <div class="input-group">
-            {!! Form::text('name',null,['id'=> 'name_search','class'=> 'form-control', 'placeholder' => 'Buscar Usuario','aria-describedby'=>'basic-addon2']) !!}
-            <span class="input-group-addon" id="basic-addon2"><span  class = "glyphicon glyphicon-search"  aria-hidden = "true"> </span></span>
-        </div>
-     {!! Form::close() !!}
-     <br>
-     <br>
-    <div class="table-responsive" id="result_search_name">
+<div class="table-responsive" id="result_search_name">
         <table class="table table-bordered">
             <thead>
                 <th><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Nombre</th>
@@ -61,10 +35,3 @@
         </table>
         {!! $users->render() !!} <!-- RENDERIZAMOS POR LAS NOTIFICACIONES FLAHS -->
     </div>
-
-
-@endsection
-@section('js')
-    
-    <script src="{{asset('js/users/scritp.js')}}"></script>
-@endsection

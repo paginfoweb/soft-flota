@@ -1,0 +1,30 @@
+[33mcommit 50ac96c9a405881962d3adc13da707d5327f8e8d[m
+Merge: 19b3d35 11a445c
+Author: Angel Fuenmayor <paginfoweb@gmail.com>
+Date:   Sun Jan 17 01:56:17 2016 -0430
+
+    integrando buscador de usuario con ajax
+
+[33mcommit 19b3d351ac8497143879d8dff9bc982321fbe894[m
+Author: Angel Fuenmayor <paginfoweb@gmail.com>
+Date:   Sun Jan 17 01:12:59 2016 -0430
+
+    Se agrego buscador de usuarios con ajax
+
+[33mcommit 24703c1b38a44c9f42c13ee05f501426bfb7c2a9[m
+Author: Angel Fuenmayor <paginfoweb@gmail.com>
+Date:   Thu Jan 14 15:58:22 2016 -0430
+
+    inicio proyecto
+
+[33mcommit 11a445c369121b4f2bd492af8bb8315825dcf3af[m
+Author: Angel Fuenmayor <paginfoweb@gmail.com>
+Date:   Thu Jan 14 16:12:56 2016 -0430
+
+    cambios de prueba
+
+[33mcommit c671b9e82a4ced4c64e845b1750423b83d7b294b[m
+Author: Angel Fuenmayor <paginfoweb@gmail.com>
+Date:   Thu Jan 14 15:58:22 2016 -0430
+
+    inicio proycto

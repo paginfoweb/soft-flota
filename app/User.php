@@ -46,4 +46,15 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->belongsToMany('App\Local')->withTimestamps();
     }
+
+
+    /*
+    * SCOPE BUSCADOR USUARIO
+     */
+    
+    public function scopeSearchUser($query, $name)
+    {
+        return $query -> where("name", "LIKE", "%$name%");
+    }
+
 }
