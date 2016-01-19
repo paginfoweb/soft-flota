@@ -3,6 +3,7 @@
     Usuarios
 @endsection
 @section('content')
+
     @if(count($errors) > 0)
         <div class="alert alert-danger" role="alert">
             <ul>
@@ -21,9 +22,10 @@
             {!! Form::text('name',null,['id'=> 'name_search','class'=> 'form-control', 'placeholder' => 'Buscar Usuario','aria-describedby'=>'basic-addon2']) !!}
             <span class="input-group-addon" id="basic-addon2"><span  class = "glyphicon glyphicon-search"  aria-hidden = "true"> </span></span>
         </div>
-     {!! Form::close() !!}
-     <br>
-     <br>
+    {!! Form::close() !!}
+    <br>
+    <br>
+
     <div class="table-responsive" id="result_search_name">
         <table class="table table-bordered">
             <thead>
@@ -58,6 +60,7 @@
                     </tr>
                 </tbody>
             @endif
+            
         </table>
         {!! $users->render() !!} <!-- RENDERIZAMOS POR LAS NOTIFICACIONES FLAHS -->
     </div>
@@ -66,5 +69,5 @@
 @endsection
 @section('js')
     
-    <script src="{{asset('js/users/scritp.js')}}"></script>
+    <script src="{{asset('js/users/script.js')}}"></script>
 @endsection

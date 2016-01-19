@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Feriado extends Model
 {
     protected $table    =   'feriados';
-    protected $fillable =   ['fecha','motivo','created_at','updated_at'];
+    protected $fillable =   ['fecha','motivo','descuento','created_at','updated_at'];
 }

@@ -21,10 +21,16 @@ class AlmacenesControllers extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $almacenes = Local::orderBy('id','ASC')->where('type','almacen')->paginate(10);
-        return view('admin.almacenes.index',['almacenes'=>$almacenes]);
+        $almacenes = Local::SearchLocal($request -> name) -> orderBy('id','ASC')-> where('type','almacen') -> paginate(10);
+        $view = view('admin.almacenes.index',['almacenes'=>$almacenes]);
+        
+        if($request -> ajax()){
+            return view('admin.almacenes.search_almacen',['almacenes'=>$almacenes]);        
+        }else{
+            return $view;
+        }
     }
 
     /**

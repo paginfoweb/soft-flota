@@ -22,10 +22,18 @@ class TalleresControllers extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $talleres = Local::orderBy('id','ASC')->where('type','taller')->paginate(10);
-        return view('admin.talleres.index',['talleres'=>$talleres]);
+        $talleres = Local::SearchLocal( $request -> name )->orderBy('id','ASC') -> where('type','taller') -> paginate(10);
+        $view = view('admin.talleres.index',['talleres'=>$talleres]);
+        /*
+        *   Validamos si la consulta es por ajax para saber que datos mostramos
+         */
+        if($request -> ajax()){            
+            return view('admin.talleres.search_taller',['talleres'=>$talleres]);
+        }else{
+            return $view;
+        }
     }
 
     /**

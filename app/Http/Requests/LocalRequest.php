@@ -24,7 +24,7 @@ class LocalRequest extends Request
     public function rules()
     {
         return [
-            'nombre'    => 'min:5|max:150|required|unique:locales',
+            'name'    => 'min:5|max:150|required|unique:locales',
             'direccion' => 'min:5|max:150|required',
             'telefono'  => 'min:6|max:150|required',
             'contacto'  => 'min:5|max:150|required',      

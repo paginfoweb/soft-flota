@@ -1,17 +1,17 @@
 @extends('admin.template.main')
 @section('title')
-    Detalle taller
+    {{trans('app.workshop_detail')}}
 @endsection
 @section('content')
-    <a href="{{route('admin.talleres.index')}}" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Listar Talleres </a> <br><br>
+    <a href="{{route('admin.talleres.index')}}" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> {{trans('app.list_workshops')}} </a> <br><br>
     <hr>
     <ul class="list-group">
-        <li class="list-group-item"><strong>Nombre:</strong> {{$taller -> nombre}}</li>
-        <li class="list-group-item"><strong>Creado:</strong> {{$taller -> created_at}}</li>
-        <li class="list-group-item"><strong>Dirección:</strong> {{$taller -> direccion}}</li>
-        <li class="list-group-item"><strong>Teléfono:</strong> {{$taller -> telefono}}</li>
-        <li class="list-group-item"><strong>Contácto:</strong> {{$taller -> contacto}}</li>
-        <li class="list-group-item"><strong>Estatus:</strong>
+        <li class="list-group-item"><strong>{{trans('app.title_name')}} :</strong> {{$taller -> name}}</li>
+        <li class="list-group-item"><strong>{{trans('app.created_title')}} :</strong> {{$taller -> created_at}}</li>
+        <li class="list-group-item"><strong>{{trans('app.title_address')}} :</strong> {{$taller -> direccion}}</li>
+        <li class="list-group-item"><strong>{{trans('app.phone_title')}} :</strong> {{$taller -> telefono}}</li>
+        <li class="list-group-item"><strong>{{trans('app.contact_title')}} :</strong> {{$taller -> contacto}}</li>
+        <li class="list-group-item"><strong>{{trans('app.status_title')}} :</strong>
             @if($taller -> estatus=='inactivo')
                 <span class="label label-danger">{{$taller -> estatus}}</span>
             @else
@@ -22,7 +22,7 @@
 
     @if($taller -> created_at != $taller -> updated_at)
         <div class="alert alert-warning" role="alert">
-          Última actualización de datos del taller: {{$taller -> updated_at }} 
+          {{trans('app.last_update')}} {{$taller -> updated_at }} 
         </div>
     @endif
 @endsection

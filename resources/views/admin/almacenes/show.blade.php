@@ -1,17 +1,17 @@
 @extends('admin.template.main')
 @section('title')
-    Detalle almacen
+    {{trans('app.detail_store')}}
 @endsection
 @section('content')
-    <a href="{{route('admin.almacenes.index')}}" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Listar Almacen </a> <br><br>
+    <a href="{{route('admin.almacenes.index')}}" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> {{trans('app.list_stores')}} </a> <br><br>
     <hr>
     <ul class="list-group">
-        <li class="list-group-item"><strong>Nombre:</strong> {{$almacen -> nombre}}</li>
-        <li class="list-group-item"><strong>Creado:</strong> {{$almacen -> created_at}}</li>
-        <li class="list-group-item"><strong>Dirección:</strong> {{$almacen -> direccion}}</li>
-        <li class="list-group-item"><strong>Teléfono:</strong> {{$almacen -> telefono}}</li>
-        <li class="list-group-item"><strong>Contácto:</strong> {{$almacen -> contacto}}</li>
-        <li class="list-group-item"><strong>Estatus:</strong> 
+        <li class="list-group-item"><strong>{{trans('app.title_name')}} :</strong> {{$almacen -> name}}</li>
+        <li class="list-group-item"><strong>{{trans('app.created_title')}} :</strong> {{$almacen -> created_at}}</li>
+        <li class="list-group-item"><strong>{{trans('app.title_address')}} :</strong> {{$almacen -> direccion}}</li>
+        <li class="list-group-item"><strong>{{trans('app.phone_title')}} :</strong> {{$almacen -> telefono}}</li>
+        <li class="list-group-item"><strong>{{trans('app.contact_title')}} :</strong> {{$almacen -> contacto}}</li>
+        <li class="list-group-item"><strong>{{trans('app.status_title')}} :</strong> 
             @if($almacen -> estatus=='inactivo')
                 <span class="label label-danger">{{$almacen -> estatus}}</span>
             @else
@@ -22,7 +22,7 @@
 
     @if($almacen -> created_at != $almacen -> updated_at)
         <div class="alert alert-warning" role="alert">
-          Última actualización de datos del almacen: {{$almacen -> updated_at }} 
+          {{trans('app.last_update')}} {{$almacen -> updated_at }} 
         </div>
     @endif
 @endsection

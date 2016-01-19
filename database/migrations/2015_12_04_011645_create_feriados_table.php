@@ -16,6 +16,7 @@ class CreateFeriadosTable extends Migration
             $table->increments('id');
             $table->date('fecha')->unique();
             $table->text('motivo');
+            $table->text('descuento');
             $table->timestamps();
         });
     }

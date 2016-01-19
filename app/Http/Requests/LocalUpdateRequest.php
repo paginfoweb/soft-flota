@@ -29,7 +29,7 @@ class LocalUpdateRequest extends Request
     public function rules()
     {
         return [
-            'nombre'    => 'min:5|max:150|required|unique:locales,nombre,'.$this->route->getParameter('talleres'),
+            'name'    => 'min:5|max:150|required|unique:locales,name,'.$this->route->getParameter('talleres'),
             'direccion' => 'min:5|max:150|required',
             'telefono'  => 'min:6|max:150|required',
             'contacto'  => 'min:5|max:150|required', 
